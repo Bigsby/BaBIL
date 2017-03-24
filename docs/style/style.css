@@ -55,4 +55,10 @@ footer{
 .content{
     padding: 20px;
     flex-grow: 1;
+    overflow-y: auto;
+}
+
+.innerContent{
+    max-width: 800px;
+    margin: 0 auto;
 }
