@@ -62,3 +62,50 @@ footer{
     max-width: 800px;
     margin: 0 auto;
 }
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+select {
+    font-size: 1.3em;
+    padding: .1em;
+    margin: 10px;
+    border: solid 1px  #000010;;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+select:focus {
+    outline: none;
+}
+
+button {
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: .1em;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #000010;
+    color: white;
+    border-radius: 10px;
+}
+
+button:disabled, button[disabled] {
+    background-color: #505050;
+}
+
+code{
+    background-color: lightgray;
+    padding: 2px 5px;
+}
