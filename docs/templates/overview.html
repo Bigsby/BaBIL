@@ -1,0 +1,28 @@
+<h1>Overview</h1>
+
+<p>Microsoft, like any other group of one or more persons, has made many "mistakes" (only if you don't learn from them) through out its history. .Net (Framework) was, for sure, not one of them. The dream of a standardized ecosystem (runtime) for all Microsoft
+    (Windows, to start with) things is a good one. The
+    <a target="_blank" href="https://en.wikipedia.org/wiki/.NET_Framework">Wikipedia page</a> about the .Net Framewok, tells the story that is not the purpose here. But let's put some definitions in place...</p>
+
+<h2>What is .Net?</h2>
+<p>A software framework that allows creating software, with a single code base from a myriad of languages and interoperability between languages and that run in diferent environments. In the end, it consists of a runtime, called Common Language Runtime (CLR,
+    from now on) that excutes a byte code or intermediate language (IL, from now on), called Microsoft Intermediate Language (MSIL, from now on), that is the result of compiling the actual written code. CLR also provides a set of core libraries that cater
+    for common software needs, e.g., File System operations, Networking, etc.</p>
+
+<p>Although there are .Net compilers for many languages, i.e., compilers that compile a language to MSIL (e.g.,
+    <a target="_blank" href="http://pythonnet.sourceforge.net/readme.html">Phython for .Net</a>, the defunct
+    <a target="_blank" href="https://msdn.microsoft.com/en-us/library/7xsxf8e2(v=vs.80).aspx">Visual J#</a>, etc.), Microsoft directly maintains <b>C#</b>, <b>VB.Net</b> and <b>F#</b>. Here, we will focus on these three languages and their native compilation
+    consequence, i.e., <b>MSIL</b>.</p>
+
+<h2>Purpose</h2>
+<p>The intent is to:</p>
+<ul>
+    <li>deep dive into what <b>.Net</b> <em>really</em> is;</li>
+    <li>what are the diferences between the languages, not in terms of semantics or syntax but in terms of:
+        <ul>
+            <li>limitations and constraints;</li>
+            <li>their <b>MSIL</b> consequences.</li>
+        </ul>
+    </li>
+    <li>Language interoperability.</li>
+</ul>
