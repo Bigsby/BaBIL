@@ -1,0 +1,4 @@
+http://www.i-programmer.info/programming/other-languages/933-getting-started-with-il.html
+
+https://sourceforge.net/projects/mingw-w64/files/latest/download?source=files
+http://www.nasm.us/pub/nasm/releasebuilds/2.12.02/win64/nasm-2.12.02-installer-x64.exe

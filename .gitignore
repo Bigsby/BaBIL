@@ -253,3 +253,6 @@ paket-files/
 
 # Compiled files
 *.exe
+
+# Disassembly files
+*.res
