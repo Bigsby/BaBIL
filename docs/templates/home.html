@@ -1,6 +1,7 @@
 <p>This series is about the .Net ecosystem: what it is, how it works, etc. Here is the list of content</p>
 <ol>
-    <li>
-        <h3><a ui-sref="overview">Overview</a></h3>
+    <li class="clickable" ui-sref="{{step.id}}" ng-repeat="step in $ctrl.steps">
+        <h3>{{step.name}}</h3>
+        <p>{{step.description}}</p>
     </li>
 </ol>

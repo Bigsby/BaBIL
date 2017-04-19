@@ -4,5 +4,8 @@
     "metadata": {
         "titlePrefix": "Tower of Bab-IL",
         "properties": {}
-    }
+    },
+    "initialData":[
+        "steps"
+    ]
 }

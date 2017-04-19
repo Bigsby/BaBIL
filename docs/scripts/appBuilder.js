@@ -1,27 +1,31 @@
+function RegisterSimpleComponent(app, name, controller) {
+    app.component(name, {
+        templateUrl: templatePath(name),
+        controller: controller
+    });
+}
+
+function RegisterSimpleState(stateProvider, name, url) {
+    stateProvider.state({
+        name: name,
+        url: url || "/" + name,
+        component: name
+    });
+}
+
 module.exports = {
-    ProcessData: function(data) {
-
-    },
-    RegisterComponents: function(app) {
-        app.component("home", {
-            templateUrl: templatePath("home")
+    RegisterComponents: function (app, data) {
+        RegisterSimpleComponent(app, "home", function (data) {
+            this.steps = data.steps;
         });
-
-        app.component("overview", {
-            templateUrl: templatePath("overview")
+        data.steps.forEach(function (step) {
+            RegisterSimpleComponent(app, step.id);
         });
     },
-    RegisterStates: function(stateProvider) {
-        stateProvider.state({
-            name: "home",
-            url: "/",
-            component: "home"
-        });
-
-        stateProvider.state({
-            name: "overview",
-            url: "/overview",
-            component: "overview"
+    RegisterStates: function (stateProvider, data) {
+        RegisterSimpleState(stateProvider, "home", "/");
+        data.steps.forEach(function (step) {
+            RegisterSimpleState(stateProvider, step.id);
         });
     }
 }
