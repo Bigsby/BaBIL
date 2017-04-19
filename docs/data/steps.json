@@ -20,9 +20,9 @@
         "description": "How to create, compile and run a program."
     },
     {
-        "id": "msil",
-        "name": "MSIL",
-        "description": "What is Microsoft Intermediate Language and the differences between the compilation results."
+        "id": "cil",
+        "name": "CIL",
+        "description": "What is Common Intermediate Language and the differences between the compilation results."
     },
     {
         "id": "entry",
