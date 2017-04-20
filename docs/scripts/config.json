@@ -1,11 +1,21 @@
 {
+    "appBuilderDeps": [
+        "hljs",
+        "hljs/languages/fsharp.min",
+        "hljs/languages/vbnet.min",
+        "hljs/languages/x86asm.min"
+    ],
+    "styles": [
+        "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/tomorrow.min.css",
+        "styles/appStyles.css"
+    ],
     "useRouting": true,
     "ga": "UA-94110702-5",
     "metadata": {
         "titlePrefix": "Tower of Bab-IL",
         "properties": {}
     },
-    "initialData":[
+    "initialData": [
         "steps"
     ]
 }

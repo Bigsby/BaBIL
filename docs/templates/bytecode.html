@@ -1,0 +1,41 @@
+<h1>Byte-code</h1>
+<p>The <em>Hello, World!</em> program, created in the <a ui-sref="hello">previous step</a>, might look like a simple ol' Win32
+    Application, it is, but only, to a certain extent. For instance, if these resulting <em>hello.exe</em> executable files
+    were to be run on a computer where .Net Framework is not installed, an error would state that exact fact. These files
+    contain a CLR header that makes them run under the CLR virtual machine. The CLR,then, reads the CIL byte-code contained
+    in
+    <em>hello.exe</em> file and executes it.</p>
+
+<h2>Differences</h2>
+<p>Although the <em>Hello, World!</em> program has the same purpose and the same desired and actual output, in all the languages,
+    the results of each compilation is quite different. Just by looking at the size of the result <em>hello.exe</em> executable
+    file, one can tell there are differences.</p>
+<table>
+    <tr>
+        <th>Language</th>
+        <th>Code file size</th>
+        <th><em>hello.exe</em> size</th>
+    </tr>
+    <tr>
+        <td>ILAsm</td>
+        <td class="right">212</td>
+        <td class="right">2048</td>
+    </tr>
+    <tr>
+        <td>C#</td>
+        <td class="right">129</td>
+        <td class="right">3548</td>
+    </tr>
+    <tr>
+        <td>F#</td>
+        <td class="right">22</td>
+        <td class="right">4096</td>
+    </tr>
+    <tr>
+        <td>VB.Net</td>
+        <td class="right">109</td>
+        <td class="right">6656</td>
+    </tr>
+</table>
+<p>Sizes are in bytes and just sample results.</p>
+<p>There are many reasons for these differences. They will be analysed further ahead...thoroughly.</p>

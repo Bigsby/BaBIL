@@ -17,6 +17,9 @@ module.exports = {
     RegisterComponents: function (app, data) {
         RegisterSimpleComponent(app, "home", function (data) {
             this.steps = data.steps;
+            this.stepFilter = function(step){
+                return step.show;
+            }
         });
         data.steps.forEach(function (step) {
             RegisterSimpleComponent(app, step.id);

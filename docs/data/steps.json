@@ -2,27 +2,37 @@
     {
         "id": "overview",
         "name": "Overview",
-        "description": "What is .Net and what is the purpose if these series."
+        "description": "What is .Net and what is the purpose if these series.",
+        "show": true
     },
     {
         "id": "setup",
         "name": "Setup",
-        "description": "System and sofware required to follow these series."
-    },
-    {
-        "id": "runtimes",
-        "name": "Runtimes",
-        "description": "What are the runtimes and what they do."
+        "description": "System and sofware required to follow these series.",
+        "show": true
     },
     {
         "id": "hello",
         "name": "Hello, World!",
-        "description": "How to create, compile and run a program."
+        "description": "How to create (code), compile and run a program.",
+        "show": true
     },
     {
-        "id": "cil",
-        "name": "CIL",
-        "description": "What is Common Intermediate Language and the differences between the compilation results."
+        "id": "bytecode",
+        "name": "Byte-code",
+        "description": "What is Common Intermediate Language and the differences between the compilation results.",
+        "show": true
+    },
+    {
+        "id": "disassemble",
+        "name": "Disasseble & CIL",
+        "description": "Back-engineering to CIL. What is CIL?",
+        "show": true
+    },
+    {
+        "id": "clutter",
+        "name": "Compilers and clutter",
+        "description": "What the compilers auto-generate."
     },
     {
         "id": "entry",
@@ -43,5 +53,10 @@
         "id": "incompatbilities",
         "name": "Limitations & Incompatibilities",
         "description": "The limitations and incompatibilities between languages."
+    },
+    {
+        "id": "runtimes",
+        "name": "Runtimes",
+        "description": "The CLRs. Who they are and what they do."
     }
 ]

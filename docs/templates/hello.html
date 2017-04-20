@@ -1,0 +1,70 @@
+<h1>Hello, World!</h1>
+<p>As usual in programming language dissertations, we start with a simple program that displays a <em>Hello, World!</em> message
+    to show the most simple end-to-end process.</p>
+<p>The process is simple and the same in every language:</p>
+<ol>
+    <li>Write the code file (in the specific) languages</li>
+    <li>Compile the code into an executable</li>
+    <li>Run the resulting executable</li>
+</ol>
+
+<p>Here it goes...</p>
+<ol>
+    <li>
+        <h2>Write the code</h2>
+        <p>In the <b>IDE</b>, create the code file:</p>
+        <ul class="noBulletList">
+            <li>
+                <h4>ILAsm</h4>
+                <p><em>hello.il</em></p>
+                <code-highlight language="x86asm" src="https://raw.githubusercontent.com/Bigsby/BabIL/master/src/IL/hello.il"></code-highlight>
+            </li>
+            <li>
+                <h4>C#</h4>
+                <p><em>hello.cs</em></p>
+                <code-highlight language="x86asm" src="https://raw.githubusercontent.com/Bigsby/BabIL/master/src/cs/hello.cs"></code-highlight>
+            </li>
+            <li>
+                <h4>F#</h4>
+                <p><em>hello.fs</em></p>
+                <code-highlight language="x86asm" src="https://raw.githubusercontent.com/Bigsby/BabIL/master/src/fs/hello.fs"></code-highlight>
+            </li>
+            <li>
+                <h4>VB.Net</h4>
+                <p><em>hello.vb</em></p>
+                <code-highlight language="x86asm" src="https://raw.githubusercontent.com/Bigsby/BabIL/master/src/vb/hello.vb"></code-highlight>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h2>Compile</h2>
+        <p>To compile the code, open the "Developer Command Prompt" for the version of Visual Studio installed and run the following command:</p>
+        <ul class="noBulletList">
+            <li>
+                <h4>ILAsm</h4>
+                <code-highlight language="base">ilasm hello.il</code-highlight>
+            </li>
+            <li>
+                <h4>C#</h4>
+                <code-highlight language="base">csc hello.cs</code-highlight>
+            </li>
+            <li>
+                <h4>F#</h4>
+                <code-highlight language="base">fsc hello.fs</code-highlight>
+            </li>
+            <li>
+                <h4>VB.Net</h4>
+                <code-highlight language="base">vbc hello.vb</code-highlight>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h2>Run the program</h2>
+        <p>In all of the languages, the previous compliation step resulted in a <em>hello.exe</em> file. to run program, simply invoke that executable in the command prompt (the Developer Command Prompt used to compile will suffice)</p>
+        <code-highlight language="base">hello.exe</code-highlight>
+        <p>That should have the output:</p>
+        <output>Hello, World!</output>
+    </li>
+</ol>
+
+<p>All the code produced in this series lives in this <url href="https://github.com/Bigsby/BabIL/tree/master/src">GitHub repository</url>.</p>
