@@ -57,6 +57,11 @@
         "description": "How to reference an external library."
     },
     {
+        "id":"link",
+        "name": "Linking",
+        "description": "How to combine multiple modules into one single output assembly."
+    },
+    {
         "id": "incompatbilities",
         "name": "Limitations & Incompatibilities",
         "description": "The limitations and incompatibilities between languages."
@@ -65,5 +70,9 @@
         "id": "runtimes",
         "name": "Runtimes",
         "description": "The CLRs. Who they are and what they do."
+    },
+    {
+        "id": "jit",
+        "name": "Just In Time compilation. What? Who? How? Why?"
     }
 ]

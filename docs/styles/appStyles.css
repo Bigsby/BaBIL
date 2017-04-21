@@ -18,6 +18,15 @@ table td {
     padding: 3px 8px;
 }
 
-table td.right{
+table td.right {
     text-align: right;
+}
+
+.step {
+    padding: 0px 5px;
+}
+
+.step:hover {
+    background-color: #ddd;
+    border-radius: 10px;
 }

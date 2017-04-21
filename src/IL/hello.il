@@ -1,8 +1,7 @@
 .assembly extern mscorlib {}
 .assembly Hello {}
-.module Hello.exe
 
-.method static void Start() cil managed
+.method static void Main() cil managed
 {
 	.entrypoint
 	ldstr "Hello, World!"

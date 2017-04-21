@@ -2,7 +2,141 @@
 
 <p>Compilers are, for the most part, friendly tools. They take human readable code into computer ruannable code. The thing is that, even the most <em>honest</em> compiler either assumes (and, maybe shouldn't) defaults or adds languages specific helpers that
     are not <em>visible</em> at code time. Let's, for instance, look at the code what happens when compiling and decompiling <b>CIL</b> code:</p>
+
 <p>Original <em>hello.il</em></p>
 <code-highlight language="x86asm" src="https://raw.githubusercontent.com/Bigsby/BabIL/master/src/IL/hello.il"></code-highlight>
 <p>Decompiled <em>hellodis.il</em></p>
 <code-highlight language="x86asm" src="https://raw.githubusercontent.com/Bigsby/BabIL/master/src/IL/hellodis.il"></code-highlight>
+
+<p>Although developers tend to like to control everything in their work, they rely <em>heavily</em> on compilers and what do for you. Further ahead, we'll go deeper on these topics.</p>
+
+<p>Instead of analysing the resulting <b>CIL</b>, that might be a little cumbersome, let's use a tool created for this very purpose that just displays the content needed for the current analysis. The code for this tool is <url href="https://github.com/Bigsby/BabIL/blob/master/tools/reflector.cs">here</url>. To use it, compile <em>reflector.cs</em> with <em>csc.exe</em> like any other <b>C#</b> file and run it like so:</p>
+<code-highlight language="base">reflector.exe filename.exe</code-highlight>
+
+<p>Runnning this tool against the <em>hello.exe</em> applications <a ui-sref="hello">compiled before</a> provides the following results.</p>
+<h2>CIL</h2>
+<output>Name: Hello, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Referenced Assemblies [1]:
+  - mscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+EntryPoint: .Main : () -> System.Void
+
+Modules [1]:
+  - hello.exe
+    Fields [0]:
+    Methods [1]:
+      - Main: () -> System.Void
+    Types [0]:</output>
+
+<h2>C#</h2>
+<output>Name: hello, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Referenced Assemblies [1]:
+  - mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+EntryPoint: Program.Main : () -> System.Void
+
+Modules [1]:
+  - hello.exe
+    Fields [0]:
+    Methods [0]:
+    Types [1]:
+      - Program: System.Object
+        Fields [0]:
+        Methods [1]:
+          - Main: () -> System.Void
+        Properties [0]:
+        Events [0]:</output>
+
+<h2>F#</h2>
+<output>Name: hello, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Referenced Assemblies [2]:
+  - mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - FSharp.Core, Version=4.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+EntryPoint: <StartupCode$hello>.$Hello.main@ : () -> System.Void
+
+Modules [1]:
+  - hello.exe
+    Fields [0]:
+    Methods [0]:
+    Types [2]:
+      - Hello: System.Object
+        Fields [0]:
+        Methods [0]:
+        Properties [0]:
+        Events [0]:
+      - <StartupCode$hello>.$Hello: System.Object
+        Fields [1]:
+          - init@: System.Int32
+        Methods [1]:
+          - main@: () -> System.Void
+        Properties [0]:
+        Events [0]:</output>
+
+<h2>VB.Net</h2>
+<output>Name: hello, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Referenced Assemblies [3]:
+  - mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  - Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+EntryPoint: Program.Main : () -> System.Void
+
+Modules [1]:
+  - hello.exe
+    Fields [0]:
+    Methods [0]:
+    Types [6]:
+      - My.MyApplication: Microsoft.VisualBasic.ApplicationServices.ApplicationBase
+        Fields [0]:
+        Methods [0]:
+        Properties [0]:
+        Events [0]:
+      - My.MyComputer: Microsoft.VisualBasic.Devices.Computer
+        Fields [0]:
+        Methods [0]:
+        Properties [0]:
+        Events [0]:
+      - My.MyProject: System.Object
+        Fields [4]:
+          - m_ComputerObjectProvider: My.MyProject+ThreadSafeObjectProvider`1[[My.MyComputer, hello, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+          - m_AppObjectProvider: My.MyProject+ThreadSafeObjectProvider`1[[My.MyApplication, hello, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+          - m_UserObjectProvider: My.MyProject+ThreadSafeObjectProvider`1[[Microsoft.VisualBasic.ApplicationServices.User, Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]
+          - m_MyWebServicesObjectProvider: My.MyProject+ThreadSafeObjectProvider`1[[My.MyProject+MyWebServices, hello, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+        Methods [4]:
+          - get_Computer: () -> My.MyComputer
+          - get_Application: () -> My.MyApplication
+          - get_User: () -> Microsoft.VisualBasic.ApplicationServices.User
+          - get_WebServices: () -> My.MyProject+MyWebServices
+        Properties [4]:
+          - Computer : My.MyComputer, get;
+          - Application : My.MyApplication, get;
+          - User : Microsoft.VisualBasic.ApplicationServices.User, get;
+          - WebServices : My.MyProject+MyWebServices, get;
+        Events [0]:
+      - Program: System.Object
+        Fields [0]:
+        Methods [1]:
+          - Main: () -> System.Void
+        Properties [0]:
+        Events [0]:
+      - My.MyProject+MyWebServices: System.Object
+        Fields [0]:
+        Methods [6]:
+          - Equals: (o: System.Object) -> System.Boolean
+          - GetHashCode: () -> System.Int32
+          - GetType: () -> System.Type
+          - ToString: () -> System.String
+          - Create__Instance__: (instance: ) ->
+          - Dispose__Instance__: (instance: ) -> System.Void
+        Properties [0]:
+        Events [0]:
+      - My.MyProject+ThreadSafeObjectProvider`1: System.Object
+        Fields [1]:
+          - m_ThreadStaticValue:
+        Methods [1]:
+          - get_GetInstance: () ->
+        Properties [1]:
+          - GetInstance : , get;
+        Events [0]:</output>
+

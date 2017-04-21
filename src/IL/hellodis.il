@@ -13,19 +13,19 @@
 {
   .ver 0:0:0:0
 }
-.module Hello.exe
-// MVID: {1CF559D8-5978-41B8-8B66-6D70A7E41654}
+.module hello.exe
+// MVID: {961FD1BE-EA40-4B29-BDA4-827509F72B43}
 .imagebase 0x00400000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x03170000
+// Image base: 0x026F0000
 
 
 // ================== GLOBAL METHODS =========================
 
-.method privatescope static void  Start$PST06000001() cil managed
+.method privatescope static void  Main$PST06000001() cil managed
 {
   .entrypoint
   // Code size       11 (0xb)
@@ -33,7 +33,7 @@
   IL_0000:  ldstr      "Hello, World!"
   IL_0005:  call       void [mscorlib]System.Console::Write(string)
   IL_000a:  ret
-} // end of global method Start
+} // end of global method Main
 
 
 // =============================================================

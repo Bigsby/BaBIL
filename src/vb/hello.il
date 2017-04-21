@@ -20,7 +20,7 @@
   .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
   .ver 10:0:0:0
 }
-.assembly hell
+.assembly hello
 {
   .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
@@ -32,14 +32,14 @@
   .hash algorithm 0x00008004
   .ver 0:0:0:0
 }
-.module hell.exe
-// MVID: {9460CB9F-15C1-4B3A-B317-B739166B3D7F}
+.module hello.exe
+// MVID: {D1D020D4-F30C-4209-AF29-C2AFBC85F3FC}
 .imagebase 0x00400000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x027A0000
+// Image base: 0x03000000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -407,10 +407,19 @@
   } // end of property MyProject::WebServices
 } // end of class My.MyProject
 
-.class public auto ansi sealed Program
+.class public auto ansi Program
        extends [mscorlib]System.Object
 {
-  .custom instance void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method public specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
   .method public static void  Main() cil managed
   {
     .entrypoint
@@ -419,7 +428,7 @@
     .maxstack  8
     IL_0000:  nop
     IL_0001:  ldstr      "Hello, World!"
-    IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0006:  call       void [mscorlib]System.Console::Write(string)
     IL_000b:  nop
     IL_000c:  ret
   } // end of method Program::Main
