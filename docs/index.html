@@ -14,27 +14,13 @@
     </header>
     <section class="content">
         <section class="innerContent">
-            <div ng-cloak class="navigation">
-                <div>
-                    <a class="previos" ng-if="previousStep.name" ng-click="go(previousStep.id)">&lt;- {{previousStep.name}}</a>
-                </div>
-                <div>
-                    <a class="next" ng-if="nextStep.name" ng-click="go(nextStep.id)">{{nextStep.name}} -&gt;</a>
-                </div>
-            </div>
+            <navigation></navigation>
             <ui-view>
                 <div class="loaderContainer">
                     <div class="loader"></div>
                 </div>
             </ui-view>
-            <div ng-cloak class="navigation">
-                <div>
-                    <a class="previos" ng-if="previousStep.name" ng-click="go(previousStep.id)">&lt;- {{previousStep.name}}</a>
-                </div>
-                <div>
-                    <a class="next" ng-if="nextStep.name" ng-click="go(nextStep.id)">{{nextStep.name}} -&gt;</a>
-                </div>
-            </div>
+            <navigation></navigation>
         </section>
     </section>
     <footer>

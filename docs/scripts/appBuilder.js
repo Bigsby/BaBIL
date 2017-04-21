@@ -21,39 +21,46 @@ module.exports = {
                 return step.show;
             }
         });
-        data.steps.forEach(function (step) {
-            RegisterSimpleComponent(app, step.id);
+
+        RegisterSimpleComponent(app, "navigation", function ($state, $transitions) {
+
+            var me = this;
+
+            function setSteps() {
+                var currentId = $state.current.name;
+
+                me.previousStep = null;
+                me.nextStep = null;
+
+                if (currentId == "home") {
+                    return;
+                }
+                var currentStepIndex = -1;
+                data.steps.forEach(function (step, index) {
+                    if (step.id == currentId)
+                        currentStepIndex = index;
+                });
+
+                if (currentStepIndex > 0)
+                    me.previousStep = data.steps[currentStepIndex - 1];
+
+                if (currentStepIndex < data.steps.length - 2 && data.steps[currentStepIndex + 1].show)
+                    me.nextStep = data.steps[currentStepIndex + 1];
+            }
+            
+            me.go = function (state) {
+                $state.go(state);
+            };
+
+            setSteps();
+
+            $transitions.onSuccess({}, setSteps);
         });
 
-        app.run(['$rootScope', '$state', '$transitions',
-            function ($rootScope, $state, $transitions) {
-                $transitions.onSuccess({}, () => {
-                    var currentId = $state.current.name;
-                    $rootScope.go = function(state){
-                        $state.go(state);
-                    };
-                    
-                    $rootScope.previousStep = null;
-                    $rootScope.nextStep = null;
-
-                    if (currentId == "home") {
-                        return;
-                    }
-                    var currentStepIndex = -1;
-                    data.steps.forEach(function (step, index) {
-                        if (step.id == currentId)
-                            currentStepIndex = index;
-                    });
-                    
-                    if (currentStepIndex > 0)
-                        $rootScope.previousStep = data.steps[currentStepIndex - 1];
-
-                    if (currentStepIndex < data.steps.length - 2 && data.steps[currentStepIndex + 1].show)
-                        $rootScope.nextStep = data.steps[currentStepIndex + 1];
-                });
-            }
-        ]);
-
+        data.steps.forEach(function (step) {
+            if (step.show)
+                RegisterSimpleComponent(app, step.id);
+        });
     },
     RegisterStates: function (stateProvider, data) {
         RegisterSimpleState(stateProvider, "home", "/");

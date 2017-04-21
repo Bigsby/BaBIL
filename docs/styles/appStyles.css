@@ -35,4 +35,19 @@ table td.right {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation .previous{
+        align-self: flex-start;
+    }
+
+    .navigation .next{
+        align-self: flex-end;
+    }
 }

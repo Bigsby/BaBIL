@@ -1,0 +1,8 @@
+<div ng-cloak class="navigation">
+    <div class="previos">
+        <a ng-if="$ctrl.previousStep.name" ng-click="$ctrl.go($ctrl.previousStep.id)">&lt;- {{$ctrl.previousStep.name}}</a>
+    </div>
+    <div class="next">
+        <a ng-if="$ctrl.nextStep.name" ng-click="$ctrl.go($ctrl.nextStep.id)">{{$ctrl.nextStep.name}} -&gt;</a>
+    </div>
+</div>
