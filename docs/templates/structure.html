@@ -1,0 +1,28 @@
+<h1>Structure</h1>
+
+<p>Before analysing the contents of a .Net assembly, it might be convinient to know what to expect, i.e., what are the components inside it. The, very high-level, content of a .Net library are:</p>
+
+<ul>
+    <li><b>Assembly</b>
+        <ul>
+            <li>Collection of <b>Module</b>(s)</li>
+        </ul>
+    </li>
+    <li><b>Module</b>
+        <ul>
+            <li>Collection of <b>Field</b>(s)</li>
+            <li>Collection of <b>Method</b>(s)</li>
+            <li>Collection of <b>Type</b>(s)</li>
+        </ul>
+    </li>
+    <li><b>Type</b>
+        <ul>
+            <li>Collection of <b>Field</b>(s)</li>
+            <li>Collection of <b>Method</b>(s)</li>
+            <li>Collection of <b>Property</b>(ies)</li>
+            <li>Collection of <b>Event</b>(s)</li>
+        </ul>
+    </li>
+</ul>
+
+<p>There is, obviously, loads more data in each component. For instance, if the library is an executable the assembly must have an entry point property defined. This, for now, will suffice our scope and purpose.</p>

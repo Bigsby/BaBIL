@@ -25,14 +25,21 @@
     },
     {
         "id": "disassemble",
-        "name": "Disasseble & CIL",
-        "description": "Back-engineering to CIL. What is CIL?",
+        "name": "Disassemble",
+        "description": "Back-engineering to CIL.",
+        "show": true
+    },
+        {
+        "id": "structure",
+        "name": "Structure",
+        "description": "What does a .Net library (or application) contain.",
         "show": true
     },
     {
         "id": "clutter",
         "name": "Compilers and clutter",
-        "description": "What the compilers auto-generate."
+        "description": "What the compilers auto-generate.",
+        "show": true
     },
     {
         "id": "entry",
