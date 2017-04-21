@@ -17,13 +17,43 @@ module.exports = {
     RegisterComponents: function (app, data) {
         RegisterSimpleComponent(app, "home", function (data) {
             this.steps = data.steps;
-            this.stepFilter = function(step){
+            this.stepFilter = function (step) {
                 return step.show;
             }
         });
         data.steps.forEach(function (step) {
             RegisterSimpleComponent(app, step.id);
         });
+
+        app.run(['$rootScope', '$state', '$transitions',
+            function ($rootScope, $state, $transitions) {
+                $transitions.onSuccess({}, () => {
+                    var currentId = $state.current.name;
+                    $rootScope.previousStep = null;
+                    $rootScope.nextStep = null;
+                    if (currentId == "home") {
+                        return;
+                    }
+                    var currentStepIndex = -1;
+                    data.steps.forEach(function (step, index) {
+                        if (step.id == currentId)
+                            currentStepIndex = index;
+                    });
+
+                    if (currentStepIndex == 0)
+                        $rootScope.previousStep = {
+                            "name": "Home",
+                            "id": "home"
+                        };
+                    else if (currentStepIndex > 0)
+                        $rootScope.previousStep = data.steps[currentStepIndex - 1];
+
+                    if (currentStepIndex < data.steps.length - 2 && data.steps[currentStepIndex + 1].show)
+                        $rootScope.nextStep = data.steps[currentStepIndex + 1];
+                });
+            }
+        ]);
+
     },
     RegisterStates: function (stateProvider, data) {
         RegisterSimpleState(stateProvider, "home", "/");

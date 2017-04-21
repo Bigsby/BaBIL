@@ -21,6 +21,10 @@
             </ui-view>
         </section>
     </section>
+    <div ng-cloak>
+        <button ng-if="previousStep.name" ui-sref="{{previousStep.id}}">{{previousStep.name}}</button>
+        <button ng-if="nextStep.name" ui-sref="{{nextStep.id}}">{{nextStep.name}}</button>
+    </div>
     <footer>
         <span class="copy">&copy; 2017 Bigsby</span>
         <a class="link" target="_blank" href="http://bigsbyspot.org">about the author</a>
