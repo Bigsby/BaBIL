@@ -1,22 +1,66 @@
-<h1>Disasseble &amp; CIL</h1>
+<h1>Disassemble</h1>
 
-<p>If it is always possible to back-engineer any program run by a commonly used and standardized operating system like <b>Windows</b>    with a commonly used and standardized CPU architecture like <b>x86</b>, it most certainly is possbile to back-engineer
-    commonly used and standardized byte-code like <b>CIL</b>.</p>
+<p>If it is always possible to back-engineer any program run by a commonly used and standardized operating system like <b>Windows</b> with a commonly used and standardized CPU architecture like <b>x86</b>, it most certainly is possbile to back-engineer the
+    commonly used and standardized byte-code resulting from compiling to .Net.</p>
 
 <p>To do so, and independent of the originally coded language, one just needs to run a simple command in the <em>Developer Command Prompt</em>:</p>
 <code-highlight language="base">ildasm hello.exe /out=hello.il</code-highlight>
 
-<p>If the <code>/out</code> parameter is excluded, a GUI application is opened, that, besides the CIL code, provides some interesting
-    statistics and several information about the executable file.</p>
+<p>If the <code>/out</code> parameter is excluded, a GUI application is opened, that, besides the CIL code, provides some interesting statistics and several information about the executable file.</p>
 
-<p>The choice of <em>.il</em> as the file extension is not innocent. In fact, regardless of the originally coded language, the
-    resulting <em>hello.il</em> file can be re-compiled using <em>ilasm</em> in the <em>Developer Command Prompt</em> like
-    any <b>ILAsm</b> file as demonstrated in the <a url="hello">earlier step in these series</a>.</p>
+<p>The choice of <em>.il</em> as the file extension is not innocent. In fact, regardless of the originally coded language, the resulting <em>hello.il</em> file can be re-compiled using <em>ilasm</em> in the <em>Developer Command Prompt</em> like any <b>ILAsm</b> file as demonstrated in the <a url="hello">earlier step in these series</a>.</p>
 
 <p>The result of disassembling the resulting <em>hello.exe</em> files is shown at the end of this page just for early reference. It will be analysed next.</p>
 
+<p>There are some tools that even <em>try</em> to convert to a higher level language, usually <b>C#</b>. Just to name the most used:</p>
+<ul>
+    <li>
+        <url href="https://www.jetbrains.com/decompiler/">dotPeek</url>
+    </li>
+    <li>
+        <url href="http://www.red-gate.com/products/dotnet-development/reflector/">.Net Reflector</url>
+    </li>
+    <li>
+        <url href="http://ilspy.net/">ILSpy</url>
+    </li>
+</ul>
+
+<p>Using one of these tools to <em>convert</em> byte-code into a (different) .Net language might have some interesting (and unusable) results. For instance, this is the result of <em>decompiling to C#</em> <em>hello.exe</em> resulting from <b>ILAsm</b>'s
+    <em>hello.il</em> in <b>dotPeek</b>:</p>
+<code-highlight language="csharp">using System;
+
+internal class &lt;Module>
+{
+  static void Start()
+  {
+    Console.Write("Hello, World!");
+  }
+}</code-highlight>
+
+<p>As will be clear, further ahead, there are no classes in this library. Doing the same with the <b>F#</b> version is also <em>funny</em>:</p>
+<code-highlight language="csharp">using &lt;StartupCode$hello&gt;;
+using Microsoft.FSharp.Core;
+using System;
+using System.Diagnostics;
+using System.IO;
+
+namespace &lt;StartupCode$hello>
+{
+  internal static class $Hello
+  {
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    internal static PrintfFormat&lt;Unit, TextWriter, Unit, Unit> fp@1;
+
+    public static void main@()
+    {
+      $Hello.fp@1 = (PrintfFormat&lt;Unit, TextWriter, Unit, Unit>) new PrintfFormat&lt;Unit, TextWriter, Unit, Unit, Unit>("Hello, World!");
+      PrintfModule.PrintFormatToTextWriter&lt;Unit>(Console.Out, Hello.fp@1);
+    }
+  }
+}</code-highlight>
+
 <h2>CIL</h2>
-<p><b>CIL</b> or <b>ILAsm</b> or, as formerly known, <b>MSIL</b> is a human readably representation of .Net's <em>byte-code</em>. It's <em>kind of</em> Assembler without registers, and the likes, and with object oriented stuff.</p>
+<p><b>CIL</b> or <b>ILAsm</b> or, as formerly known, <b>MSIL</b>, is a human readably representation of .Net's <em>byte-code</em>. It's .Net's Assembler. It's <em>kind of</em> Assembler without registers, and the likes, and with object oriented stuff, e.g., types and its members, e.g., fields, properties, methods, etc. <b>CIL</b>, being the <em>working heart</em> of <b>.Net</b> is stack based.</p>
 
 <h2>Disassemble Result</h2>
 <ul class="noBulletList">

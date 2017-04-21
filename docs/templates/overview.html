@@ -1,21 +1,15 @@
 <h1>Overview</h1>
 
-<p>Microsoft, like any other group of one or more persons, has made many "mistakes" (only if you don't learn from them) through
-    out its history. .Net (Framework) was, for sure, not one of them. The dream of a standardized ecosystem (runtime) for
-    all Microsoft (Windows, to start with) things is a good one. The
-    <url href="https://en.wikipedia.org/wiki/.NET_Framework">Wikipedia page</url> about the .Net Framewok, tells the story that is not the purpose here. But let's put some definition
-    in place...</p>
+<p>Microsoft, like any other group of one or more persons, has made many "mistakes" (only if you don't learn from them) through out its history. .Net (Framework) was, for sure, not one of them. The dream of a standardized ecosystem (runtime) for all Microsoft
+    (Windows, to start with) things is a good one. The
+    <url href="https://en.wikipedia.org/wiki/.NET_Framework">Wikipedia page</url> about the .Net Framewok, tells the story that is not the purpose here. But let's put some definition in place...</p>
 
 <h2>What is .Net?</h2>
-<p>A software framework that allows creating software, with a single code base from a myriad of languages, interoperability
-    between languages and that run in diferent environments. In the end, it consists of a runtime (or runtimes), called <b>Common Language
-    Runtime</b> (<b>CLR</b>, from now on) that excutes a <em>byte-code</em> or intermediate language (<b>IL</b>, from now
-    on), called <b>Common Intermediate
-    Language</b> (<b>CIL</b>, from now on and formerly called Microsoft Intermediate Language, MSIL), that is the result
-    of compiling the actual written code. CLR also provides a set of core libraries that cater for common software needs,
-    e.g., File System operations, Networking, etc.</p>
-<p>This framework provides an abstraction layer that allows for the same <em>byte-code</em> to run on different environemnts.
-    At first, different (almost all) versions of Microsoft's own <b>Windows</b> operating system but, these days through
+<p>A software framework that allows creating software, with a single code base from a myriad of languages, interoperability between languages and that run in diferent environments. In the end, it consists of a runtime (or runtimes), called <b>Common Language
+    Runtime</b> (<b>CLR</b>, from now on) that excutes a intermediate language (<b>IL</b>, from now on) <em>byte-code</em>, called <b>Common Intermediate
+    Language</b> (<b>CIL</b>, from now on and formerly called Microsoft Intermediate Language, MSIL), that is the result of compiling the actual written code. CLR also provides a set of core libraries that cater for common software needs, e.g., File System
+    operations, Networking, etc.</p>
+<p>This framework provides an abstraction layer that allows for the same <em>byte-code</em> to run on different environemnts. At first, different (almost all) versions of Microsoft's own <b>Windows</b> operating system but, these days through
     <url href="https://dot.net/core"><b>.Net Core</b></url>, on (almost) every operating system, including:</p>
 <ul>
     <li>Microsft's' Windows:
@@ -45,14 +39,15 @@
         </ul>
     </li>
 </ul>
-<p>...that is, covering almost every <em>living</em> operating system and device. There is an <url href="https://github.com/dotnet/coreclr/issues/3977">open issue on <b>GitHub</b></url> for full support on ARM processors.</p>
+<p>...that is, covering almost every <em>living</em> operating system and device. There is an
+    <url href="https://github.com/dotnet/coreclr/issues/3977">open issue on <b>GitHub</b></url> for full support on ARM processors.</p>
 
 <h2>Programming Languages</h2>
-<p>Although there are .Net compilers for many languages, i.e., compilers that compile a language to <b>CIL</b> (e.g.,
+<p>Although there are .Net compilers for many languages, i.e., compilers that compile a language to <b>CIL</b> <em>byte-code</em> (e.g.,
     <url href="http://pythonnet.sourceforge.net/readme.html">Phython for .Net</url>, the defunct
     <url href="https://msdn.microsoft.com/en-us/library/7xsxf8e2(v=vs.80).aspx">Visual J#</url>, etc.), Microsoft directly maintains the compiler for these languages:</p>
 <ul>
-    <li><b>ILAsm</b></li>
+    <li><b>CIL</b></li>
     <li><b>C#</b></li>
     <li><b>F#</b></li>
     <li><b>VB.Net</b></li>

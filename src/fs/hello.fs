@@ -1,1 +1,3 @@
-printf "Hello, World!"
+open System
+
+Console.Write "Hello, World!"
