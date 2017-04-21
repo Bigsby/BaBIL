@@ -14,17 +14,29 @@
     </header>
     <section class="content">
         <section class="innerContent">
+            <div ng-cloak class="navigation">
+                <div>
+                    <a class="previos" ng-if="previousStep.name" ng-click="go(previousStep.id)">&lt;- {{previousStep.name}}</a>
+                </div>
+                <div>
+                    <a class="next" ng-if="nextStep.name" ng-click="go(nextStep.id)">{{nextStep.name}} -&gt;</a>
+                </div>
+            </div>
             <ui-view>
                 <div class="loaderContainer">
                     <div class="loader"></div>
                 </div>
             </ui-view>
+            <div ng-cloak class="navigation">
+                <div>
+                    <a class="previos" ng-if="previousStep.name" ng-click="go(previousStep.id)">&lt;- {{previousStep.name}}</a>
+                </div>
+                <div>
+                    <a class="next" ng-if="nextStep.name" ng-click="go(nextStep.id)">{{nextStep.name}} -&gt;</a>
+                </div>
+            </div>
         </section>
     </section>
-    <div ng-cloak>
-        <button ng-if="previousStep.name" ui-sref="{{previousStep.id}}">{{previousStep.name}}</button>
-        <button ng-if="nextStep.name" ui-sref="{{nextStep.id}}">{{nextStep.name}}</button>
-    </div>
     <footer>
         <span class="copy">&copy; 2017 Bigsby</span>
         <a class="link" target="_blank" href="http://bigsbyspot.org">about the author</a>

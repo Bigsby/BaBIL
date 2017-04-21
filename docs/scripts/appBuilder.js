@@ -29,8 +29,13 @@ module.exports = {
             function ($rootScope, $state, $transitions) {
                 $transitions.onSuccess({}, () => {
                     var currentId = $state.current.name;
+                    $rootScope.go = function(state){
+                        $state.go(state);
+                    };
+                    
                     $rootScope.previousStep = null;
                     $rootScope.nextStep = null;
+
                     if (currentId == "home") {
                         return;
                     }
@@ -39,13 +44,8 @@ module.exports = {
                         if (step.id == currentId)
                             currentStepIndex = index;
                     });
-
-                    if (currentStepIndex == 0)
-                        $rootScope.previousStep = {
-                            "name": "Home",
-                            "id": "home"
-                        };
-                    else if (currentStepIndex > 0)
+                    
+                    if (currentStepIndex > 0)
                         $rootScope.previousStep = data.steps[currentStepIndex - 1];
 
                     if (currentStepIndex < data.steps.length - 2 && data.steps[currentStepIndex + 1].show)

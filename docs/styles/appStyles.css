@@ -30,3 +30,9 @@ table td.right {
     background-color: #ddd;
     border-radius: 10px;
 }
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
